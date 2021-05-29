@@ -7,6 +7,8 @@ public class PlayerMove : MonoBehaviour
     float DG;
     float HB;
     public float speed;
+    public int comida = 0;
+    public int etat = 1;
     // Start is called before the first frame update
     void Start()
     {

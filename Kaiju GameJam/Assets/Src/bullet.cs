@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GameObject player;
+    public float lifeTime;
+    float time = 0;
+    float distPlay;
+    public float distMin;
+
+    private void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        time += Time.deltaTime;
+        if(time >= lifeTime) { Destroy(gameObject); }
+        distPlay = Vector3.Distance(player.transform.position, transform.position);
+        if(distPlay <= distMin) { Destroy(gameObject); }
     }
 }
