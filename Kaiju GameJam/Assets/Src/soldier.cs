@@ -12,7 +12,7 @@ public class soldier : MonoBehaviour {
     public GameObject bulletPref;
     public float cooldown;
     float time;
-
+    int panpan = 10;
     GameObject player;
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -47,7 +47,6 @@ public class soldier : MonoBehaviour {
             transform.parent = player.transform;
             transform.Rotate(new Vector3(0, 0, 180));
 
-            int panpan = 10;
             time += Time.deltaTime;
 
             if(time > cooldown && panpan > 0) {
@@ -71,9 +70,5 @@ public class soldier : MonoBehaviour {
 		bul.damage = damage;
         bul.playerAbs = from_player;
         rb.AddForce(transform.right * bul.speed, ForceMode2D.Impulse);
-    }
-
-    void absorbed() {
-
     }
 }
