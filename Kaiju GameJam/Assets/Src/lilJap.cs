@@ -14,7 +14,7 @@ public class lilJap : MonoBehaviour
     public float bulletForce;
 
     public bool absorb = false;
-
+    int panpan = 10;
 
 
     // Start is called before the first frame update
@@ -54,7 +54,6 @@ public class lilJap : MonoBehaviour
         {
             transform.parent = player.transform;
             transform.Rotate(new Vector3(0, 0, 180));
-            int panpan = 10;
             time += Time.deltaTime;
             if(time> cooldown && panpan >0)
             {
@@ -76,10 +75,5 @@ public class lilJap : MonoBehaviour
         bullet.GetComponent<bullet>().playerAbs = true;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
-    }
-
-    void absorbed()
-    {
-
     }
 }
