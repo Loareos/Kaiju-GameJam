@@ -9,6 +9,7 @@ public class bullet : MonoBehaviour
     float time = 0;
     float distPlay;
     public float distMin;
+    public bool playerAbs = false;
 
     private void Start()
     {
@@ -20,6 +21,6 @@ public class bullet : MonoBehaviour
         time += Time.deltaTime;
         if(time >= lifeTime) { Destroy(gameObject); }
         distPlay = Vector3.Distance(player.transform.position, transform.position);
-        if(distPlay <= distMin) { Destroy(gameObject); }
+        if(playerAbs == false && distPlay <= distMin) { Destroy(gameObject); }
     }
 }

@@ -155,10 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 810177640}
-  bulletsNb: 10
   bulletPref: {fileID: 7064721009946213036, guid: 92109d74c600edb4cbea92f8cc1c2b97, type: 3}
   cooldown: 2
   bulletForce: 5
+  absorb: 0
 --- !u!61 &453392532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -452,10 +452,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 810177640}
-  bulletsNb: 10
   bulletPref: {fileID: 7064721009946213036, guid: 92109d74c600edb4cbea92f8cc1c2b97, type: 3}
   cooldown: 2
   bulletForce: 5
+  absorb: 0
 --- !u!4 &761427715
 Transform:
   m_ObjectHideFlags: 0
@@ -579,10 +579,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 810177640}
-  bulletsNb: 10
   bulletPref: {fileID: 7064721009946213036, guid: 92109d74c600edb4cbea92f8cc1c2b97, type: 3}
   cooldown: 2
   bulletForce: 5
+  absorb: 0
 --- !u!4 &791768971
 Transform:
   m_ObjectHideFlags: 0
@@ -710,6 +710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.01
+  comida: 0
+  etat: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,10 +904,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 810177640}
-  bulletsNb: 10
   bulletPref: {fileID: 7064721009946213036, guid: 92109d74c600edb4cbea92f8cc1c2b97, type: 3}
   cooldown: 2
   bulletForce: 5
+  absorb: 0
 --- !u!4 &1017791489
 Transform:
   m_ObjectHideFlags: 0
@@ -1029,10 +1031,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 810177640}
-  bulletsNb: 10
   bulletPref: {fileID: 7064721009946213036, guid: 92109d74c600edb4cbea92f8cc1c2b97, type: 3}
   cooldown: 2
   bulletForce: 5
+  absorb: 0
 --- !u!4 &1218456675
 Transform:
   m_ObjectHideFlags: 0
@@ -1156,10 +1158,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 810177640}
-  bulletsNb: 10
   bulletPref: {fileID: 7064721009946213036, guid: 92109d74c600edb4cbea92f8cc1c2b97, type: 3}
   cooldown: 2
   bulletForce: 5
+  absorb: 0
 --- !u!4 &1599779132
 Transform:
   m_ObjectHideFlags: 0

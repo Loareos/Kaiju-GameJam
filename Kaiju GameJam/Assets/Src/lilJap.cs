@@ -13,6 +13,8 @@ public class lilJap : MonoBehaviour
     float time;
     public float bulletForce;
 
+    public bool absorb = false;
+
 
 
     // Start is called before the first frame update
@@ -25,12 +27,17 @@ public class lilJap : MonoBehaviour
     void Update()
     {
         distPlay = Vector3.Distance(player.transform.position, transform.position);
-        if (distPlay < 1) { player.GetComponent<PlayerMove>().comida++; Destroy(gameObject); }
-        time += Time.deltaTime;
-        if(time >= cooldown)
+        if (distPlay < 0.8f) {
+            absorb = true;
+        }
+        if (!absorb)
         {
-            shoot();
-            time = 0;
+            time += Time.deltaTime;
+            if (time >= cooldown)
+            {
+                shoot();
+                time = 0;
+            }
         }
         Vector3 vectorToTarget = player.transform.position - transform.position;
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
@@ -39,16 +46,40 @@ public class lilJap : MonoBehaviour
         {
             transform.Translate(Vector3.right * Time.deltaTime);
         }
-        if(distPlay < 3)
+        if(distPlay < 3 && absorb == false)
         {
             transform.Translate(Vector3.left * Time.deltaTime);
+        }
+        if (absorb)
+        {
+            transform.parent = player.transform;
+            transform.Rotate(new Vector3(0, 0, 180));
+            int panpan = 10;
+            time += Time.deltaTime;
+            if(time> cooldown && panpan >0)
+            {
+                shoot();
+                panpan--;
+                time = 0;
+            }
+            if(panpan <= 0)
+            {
+                player.GetComponent<PlayerMove>().comida++;
+                Destroy(gameObject);
+            }
         }
     }
 
     void shoot()
     {
         GameObject bullet = Instantiate(bulletPref, transform.position, transform.rotation);
+        bullet.GetComponent<bullet>().playerAbs = true;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
+    }
+
+    void absorbed()
+    {
+
     }
 }
